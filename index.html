@@ -3,8 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tuukka Seeslahti</title>
-  <meta name="description" content="Product Director at FabricAI/Visma. Co-founder, AI pioneer, investor through Calmbay Capital." />
+
+  <!-- Primary SEO -->
+  <title>Tuukka Seeslahti — Product Director, Co-founder & Investor</title>
+  <meta name="description" content="Tuukka Seeslahti is a product leader, entrepreneur, and AI pioneer based in Tampere, Finland. Co-founder of FabricAI (acquired by Visma 2023). Product Director scaling FabricAI from 1M€ to 5M€ ARR. Investor through Calmbay Capital Oy." />
+  <meta name="keywords" content="Tuukka Seeslahti, FabricAI, Visma, Product Director, startup, AI, artificial intelligence, Tampere, Calmbay Capital, entrepreneur, exit, SaaS" />
+  <meta name="author" content="Tuukka Seeslahti" />
+  <link rel="canonical" href="https://seeslahti.com/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (LinkedIn, Facebook, Slack previews) -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Tuukka Seeslahti — Product Director, Co-founder & Investor" />
+  <meta property="og:description" content="Co-founder of FabricAI (acquired by Visma). Product Director scaling from 1M€ to 5M€ ARR. AI pioneer and investor through Calmbay Capital." />
+  <meta property="og:url" content="https://seeslahti.com/" />
+  <meta property="og:image" content="https://fabricai.fi/wp-content/uploads/2019/11/Tuukka-FabricAI.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="profile:first_name" content="Tuukka" />
+  <meta property="profile:last_name" content="Seeslahti" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tuukka Seeslahti — Product Director, Co-founder & Investor" />
+  <meta name="twitter:description" content="Co-founder of FabricAI (acquired by Visma). Scaling AI-native products and investing through Calmbay Capital." />
+  <meta name="twitter:image" content="https://fabricai.fi/wp-content/uploads/2019/11/Tuukka-FabricAI.jpg" />
+
+  <!-- JSON-LD structured data (Google & AI tools) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tuukka Seeslahti",
+    "url": "https://seeslahti.com",
+    "image": "https://fabricai.fi/wp-content/uploads/2019/11/Tuukka-FabricAI.jpg",
+    "email": "tuukka@seeslahti.com",
+    "jobTitle": "Product Director",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "FabricAI / Visma",
+      "url": "https://fabricai.fi"
+    },
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "FabricAI",
+      "foundingDate": "2018",
+      "dissolutionDate": "2023",
+      "description": "AI-native purchase invoice automation, acquired by Visma in 2023"
+    },
+    "owns": {
+      "@type": "Organization",
+      "name": "Calmbay Capital Oy",
+      "description": "Holding and investment company based in Tampere, Finland"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/tuukka-seeslahti/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tampere",
+      "addressCountry": "FI"
+    },
+    "description": "Product leader, entrepreneur, and AI pioneer. Co-founder of FabricAI (acquired by Visma 2023). Product Director scaling FabricAI from 1M€ to 5M€ ARR. Investor through Calmbay Capital Oy.",
+    "knowsAbout": ["Artificial Intelligence", "SaaS", "Product Management", "Startup Scaling", "Accounting Automation", "B2B Software"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -207,13 +269,28 @@
 
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-photo img {
+      width: 260px;
+      height: 340px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 1.5rem;
+      display: block;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 48px rgba(15,23,42,0.12);
+    }
+
     /* ─── ABOUT ─── */
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-      margin-top: 3rem;
+      display: block;
+      margin-top: 1.75rem;
     }
 
     .about-text p {
@@ -226,8 +303,9 @@
 
     .about-stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
+      margin-top: 3rem;
     }
 
     .stat-card {
@@ -297,7 +375,14 @@
       flex-shrink: 0;
     }
     .logo-fabric  { background: linear-gradient(135deg, #0EA5E9, #6366F1); color: #fff; }
-    .logo-calmbay { background: linear-gradient(135deg, #0F172A, #1E3A5F); color: #fff; }
+    .logo-calmbay {
+      background: linear-gradient(135deg, #0F172A, #1E3A5F);
+      color: #fff;
+      width: 64px;
+      height: 64px;
+      border-radius: 1.125rem;
+      box-shadow: 0 4px 16px rgba(15,23,42,0.25);
+    }
 
     .work-card-company {
       font-size: 1.1875rem;
@@ -401,7 +486,7 @@
 
     .featured-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
       margin-top: 3rem;
     }
@@ -587,7 +672,9 @@
 
       h1 { font-size: clamp(2.75rem, 13vw, 4rem); }
 
-      .about-grid  { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-inner  { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-photo  { display: flex; justify-content: center; order: -1; }
+      .hero-photo img { width: 180px; height: 220px; }
       .work-grid   { grid-template-columns: 1fr; }
       .ai-inner    { padding: 2.5rem 1.5rem; }
       .ai-points   { grid-template-columns: 1fr; gap: 1rem; }
@@ -614,16 +701,23 @@
 <!-- ── Hero ──────────────────────────────────────── -->
 <section id="hero">
   <div class="container">
-    <div class="hero-eyebrow">Product Director · Co-founder · Investor</div>
-    <h1>Tuukka<br>Seeslahti</h1>
-    <p class="hero-tagline">
-      Building AI-native products from 0 to scale. Co-founder of FabricAI —
-      acquired by Visma. Scaling the product line from 1M€ to 5M€ ARR.
-      Investor and advisor through Calmbay Capital.
-    </p>
-    <div class="hero-actions">
-      <a href="#work" class="btn btn-primary">See my work ↓</a>
-      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Product Director · Co-founder · Investor</div>
+        <h1>Tuukka<br>Seeslahti</h1>
+        <p class="hero-tagline">
+          Building AI-native products from 0 to scale. Co-founder of FabricAI —
+          acquired by Visma. Scaling the product line from 1M€ to 5M€ ARR.
+          Investor and advisor through Calmbay Capital.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">See my work ↓</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://fabricai.fi/wp-content/uploads/2019/11/Tuukka-FabricAI.jpg" alt="Tuukka Seeslahti" />
+      </div>
     </div>
   </div>
 </section>
@@ -655,23 +749,23 @@
           support early-stage founders through my holding company, Calmbay Capital Oy.
         </p>
       </div>
-      <div class="about-stats fade-up delay-1">
-        <div class="stat-card">
-          <div class="stat-value">2018</div>
-          <div class="stat-label">Year FabricAI was founded</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">40K+</div>
-          <div class="stat-label">Companies using FabricAI</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">1M+</div>
-          <div class="stat-label">Invoices processed monthly</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">2023</div>
-          <div class="stat-label">Acquired by Visma</div>
-        </div>
+    </div>
+    <div class="about-stats fade-up delay-2">
+      <div class="stat-card">
+        <div class="stat-value">2018</div>
+        <div class="stat-label">Year FabricAI was founded</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">40K+</div>
+        <div class="stat-label">Companies using FabricAI</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">1M+</div>
+        <div class="stat-label">Invoices processed monthly</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">2023</div>
+        <div class="stat-label">Acquired by Visma</div>
       </div>
     </div>
   </div>
@@ -707,7 +801,34 @@
 
       <div class="work-card fade-up delay-1">
         <span class="work-card-badge badge-holding">Holding &amp; Investment</span>
-        <div class="work-card-logo logo-calmbay">C</div>
+        <div class="work-card-logo logo-calmbay">
+          <svg viewBox="0 0 32 32" fill="none" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer ring -->
+            <circle cx="16" cy="16" r="11" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
+            <!-- 8 spokes from center to beyond outer ring (handles) -->
+            <line x1="16" y1="16" x2="29" y2="16"   stroke="rgba(255,255,255,0.7)" stroke-width="1.1"/>
+            <line x1="16" y1="16" x2="25.2" y2="6.8" stroke="rgba(255,255,255,0.7)" stroke-width="1.1"/>
+            <line x1="16" y1="16" x2="16"   y2="3"   stroke="rgba(255,255,255,0.7)" stroke-width="1.1"/>
+            <line x1="16" y1="16" x2="6.8"  y2="6.8" stroke="rgba(255,255,255,0.7)" stroke-width="1.1"/>
+            <line x1="16" y1="16" x2="3"    y2="16"  stroke="rgba(255,255,255,0.7)" stroke-width="1.1"/>
+            <line x1="16" y1="16" x2="6.8"  y2="25.2" stroke="rgba(255,255,255,0.7)" stroke-width="1.1"/>
+            <line x1="16" y1="16" x2="16"   y2="29"  stroke="rgba(255,255,255,0.7)" stroke-width="1.1"/>
+            <line x1="16" y1="16" x2="25.2" y2="25.2" stroke="rgba(255,255,255,0.7)" stroke-width="1.1"/>
+            <!-- Handle knobs at spoke ends -->
+            <circle cx="29"  cy="16"   r="1.3" fill="white"/>
+            <circle cx="25.2" cy="6.8" r="1.3" fill="white"/>
+            <circle cx="16"  cy="3"    r="1.3" fill="white"/>
+            <circle cx="6.8" cy="6.8"  r="1.3" fill="white"/>
+            <circle cx="3"   cy="16"   r="1.3" fill="white"/>
+            <circle cx="6.8" cy="25.2" r="1.3" fill="white"/>
+            <circle cx="16"  cy="29"   r="1.3" fill="white"/>
+            <circle cx="25.2" cy="25.2" r="1.3" fill="white"/>
+            <!-- Center hub — filled dark to mask spoke overlap -->
+            <circle cx="16" cy="16" r="5.5" fill="#0F172A" stroke="rgba(255,255,255,0.85)" stroke-width="1.3"/>
+            <!-- CC monogram -->
+            <text x="16" y="19" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="6" font-weight="700" fill="white" letter-spacing="-0.5">CC</text>
+          </svg>
+        </div>
         <div class="work-card-company">Calmbay Capital Oy</div>
         <div class="work-card-role">Founder · Chairperson</div>
         <p class="work-card-desc">
@@ -794,6 +915,14 @@
         <span class="featured-cta">Read more →</span>
       </a>
 
+      <a href="https://www.tamperelainen.fi/paikalliset/1222727" target="_blank" rel="noopener noreferrer" class="featured-card fade-up delay-3">
+        <div class="featured-type">📰 Article · In Finnish</div>
+        <div class="featured-icon" style="background:#FEF3C7;">📰</div>
+        <div class="featured-title">Terminator inspiroi tekoälyfirmaa — "Jos on tavoite ja visio, sille pitää antaa kaikkensa"</div>
+        <div class="featured-meta">Tamperelainen · Oct 2019. FabricAI's founding story covered by local media — how Schwarzenegger's mindset shaped the team's approach to building an AI company from scratch.</div>
+        <span class="featured-cta">Read on Tamperelainen →</span>
+      </a>
+
     </div>
   </div>
 </section>
@@ -811,11 +940,11 @@
         to connect — I'm always open to a good conversation.
       </p>
       <div class="contact-links">
-        <a href="mailto:hello@tuukkaseeslahti.com" class="contact-link">
+        <a href="mailto:tuukka@seeslahti.com" class="contact-link">
           <div class="contact-icon">✉</div>
           <div class="contact-text">
             <strong>Email</strong>
-            <span>hello@tuukkaseeslahti.com</span>
+            <span>tuukka@seeslahti.com</span>
           </div>
           <span class="contact-arrow">→</span>
         </a>
@@ -834,7 +963,7 @@
 
 <!-- ── Footer ────────────────────────────────────── -->
 <footer>
-  <p>© 2025 Tuukka Seeslahti · Calmbay Capital Oy</p>
+  <p>© 2026 Tuukka Seeslahti · Calmbay Capital Oy</p>
 </footer>
 
 <script>
