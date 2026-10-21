@@ -134,6 +134,35 @@
     }
     .nav-links a:hover { color: var(--text); }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .lang-switch button {
+      background: none;
+      border: none;
+      padding: 0.25rem 0.25rem;
+      font: inherit;
+      color: var(--text-muted);
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .lang-switch button:hover { color: var(--text); }
+    .lang-switch button.active { color: var(--text); }
+    .lang-switch button.active:not(:hover) { color: var(--accent); }
+    .lang-sep { color: var(--border); }
+
     .nav-toggle {
       display: none;
       flex-direction: column;
@@ -651,6 +680,7 @@
       section { padding: 4rem 1.25rem; }
 
       .nav-toggle { display: flex; }
+      .nav-right { gap: 1rem; }
       .nav-links {
         display: none;
         position: absolute;
@@ -687,16 +717,23 @@
 <!-- ── Navigation ────────────────────────────────── -->
 <nav id="navbar">
   <a href="#hero" class="nav-logo">Tuukka Seeslahti</a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#ai">AI &amp; Tech</a></li>
-    <li><a href="#featured">Featured</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#work" data-i18n="nav.work">Work</a></li>
+      <li><a href="#ai" data-i18n="nav.ai">AI &amp; Tech</a></li>
+      <li><a href="#featured" data-i18n="nav.featured">Featured</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="lang-switch" role="group" aria-label="Language / Kieli">
+      <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
+      <span class="lang-sep" aria-hidden="true">/</span>
+      <button type="button" data-lang="fi" lang="fi" aria-pressed="false">FI</button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- ── Hero ──────────────────────────────────────── -->
@@ -704,16 +741,16 @@
   <div class="container">
     <div class="hero-inner">
       <div class="hero-text">
-        <div class="hero-eyebrow">Product Director · Co-founder · Investor</div>
+        <div class="hero-eyebrow" data-i18n="hero.eyebrow">Product Director · Co-founder · Investor</div>
         <h1>Tuukka<br>Seeslahti</h1>
-        <p class="hero-tagline">
+        <p class="hero-tagline" data-i18n="hero.tagline">
           Building AI-native products from 0 to scale. Co-founder of FabricAI —
           acquired by Visma. Scaling the product line from 1M€ to 5M€ ARR.
           Investor and advisor through Calmbay Capital.
         </p>
         <div class="hero-actions">
-          <a href="#work" class="btn btn-primary">See my work ↓</a>
-          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+          <a href="#work" class="btn btn-primary" data-i18n="hero.cta1">See my work ↓</a>
+          <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Get in touch</a>
         </div>
       </div>
       <div class="hero-photo">
@@ -728,23 +765,23 @@
 <!-- ── About ─────────────────────────────────────── -->
 <section id="about">
   <div class="container">
-    <span class="section-label">About</span>
-    <h2>From zero to exit —<br>and still building.</h2>
+    <span class="section-label" data-i18n="about.label">About</span>
+    <h2 data-i18n="about.title">From zero to exit —<br>and still building.</h2>
     <div class="about-grid">
       <div class="about-text fade-up">
-        <p>
+        <p data-i18n="about.p1">
           I'm a product leader, entrepreneur, and AI advocate based in Tampere, Finland.
           In 2018, I co-founded FabricAI alongside Jarkko Tolvanen, Juhani Tolvanen, and
           Kaarle Putti — driven by a shared frustration with the manual, time-consuming
           work of purchase invoice processing.
         </p>
-        <p>
+        <p data-i18n="about.p2">
           We built FabricAI from a whiteboard sketch into a product trusted by over
           40,000 companies, processing more than 1 million invoices every month. Our
           ambition was clear from day one — we literally drew "Exit to Visma" on a
           whiteboard. In 2023, that vision became reality.
         </p>
-        <p>
+        <p data-i18n="about.p3">
           Today I lead FabricAI's product line as Product Director at Visma, driving
           the business from 1M€ ARR toward 5M€. Alongside that, I invest in and
           support early-stage founders through my holding company, Calmbay Capital Oy.
@@ -754,19 +791,19 @@
     <div class="about-stats fade-up delay-2">
       <div class="stat-card">
         <div class="stat-value">2018</div>
-        <div class="stat-label">Year FabricAI was founded</div>
+        <div class="stat-label" data-i18n="stat.founded">Year FabricAI was founded</div>
       </div>
       <div class="stat-card">
         <div class="stat-value">40K+</div>
-        <div class="stat-label">Companies using FabricAI</div>
+        <div class="stat-label" data-i18n="stat.companies">Companies using FabricAI</div>
       </div>
       <div class="stat-card">
         <div class="stat-value">1M+</div>
-        <div class="stat-label">Invoices processed monthly</div>
+        <div class="stat-label" data-i18n="stat.invoices">Invoices processed monthly</div>
       </div>
       <div class="stat-card">
         <div class="stat-value">2023</div>
-        <div class="stat-label">Acquired by Visma</div>
+        <div class="stat-label" data-i18n="stat.acquired">Acquired by Visma</div>
       </div>
     </div>
   </div>
@@ -777,31 +814,31 @@
 <!-- ── Work ──────────────────────────────────────── -->
 <section id="work">
   <div class="container">
-    <span class="section-label">Current Focus</span>
-    <h2>Where I spend<br>my time.</h2>
+    <span class="section-label" data-i18n="work.label">Current Focus</span>
+    <h2 data-i18n="work.title">Where I spend<br>my time.</h2>
     <div class="work-grid">
 
       <div class="work-card fade-up">
-        <span class="work-card-badge badge-active">Active · Full-time</span>
+        <span class="work-card-badge badge-active" data-i18n="work.badge1">Active · Full-time</span>
         <div class="work-card-logo logo-fabric">F</div>
         <div class="work-card-company">FabricAI / Visma</div>
         <div class="work-card-role">Product Director</div>
-        <p class="work-card-desc">
+        <p class="work-card-desc" data-i18n="work.desc1">
           Leading FabricAI's product line within Visma — shaping product strategy,
           growing the team, and heading international partnerships. Driving the
           business from 1M€ ARR toward 5M€ revenue in scale-up mode.
         </p>
         <div class="work-card-tags">
-          <span class="tag">Product Strategy</span>
+          <span class="tag" data-i18n="tag.strategy">Product Strategy</span>
           <span class="tag">Scale-up</span>
-          <span class="tag">AI Automation</span>
-          <span class="tag">Accounting Tech</span>
+          <span class="tag" data-i18n="tag.aiauto">AI Automation</span>
+          <span class="tag" data-i18n="tag.acctech">Accounting Tech</span>
           <span class="tag">Visma</span>
         </div>
       </div>
 
       <div class="work-card fade-up delay-1">
-        <span class="work-card-badge badge-holding">Holding &amp; Investment</span>
+        <span class="work-card-badge badge-holding" data-i18n="work.badge2">Holding &amp; Investment</span>
         <div class="work-card-logo logo-calmbay">
           <svg viewBox="0 0 32 32" fill="none" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
             <!-- Outer ring -->
@@ -831,16 +868,16 @@
           </svg>
         </div>
         <div class="work-card-company">Calmbay Capital Oy</div>
-        <div class="work-card-role">Founder · Chairperson</div>
-        <p class="work-card-desc">
+        <div class="work-card-role" data-i18n="work.role2">Founder · Chairperson</div>
+        <p class="work-card-desc" data-i18n="work.desc2">
           A personal holding and investment vehicle for supporting early-stage
           startups and building a long-term asset base. Backing founders with
           capital, networks, and hands-on experience from the startup trenches.
         </p>
         <div class="work-card-tags">
-          <span class="tag">Early-stage</span>
+          <span class="tag" data-i18n="tag.early">Early-stage</span>
           <span class="tag">Holding</span>
-          <span class="tag">Startup advisory</span>
+          <span class="tag" data-i18n="tag.advisory">Startup advisory</span>
           <span class="tag">Tampere</span>
         </div>
       </div>
@@ -855,9 +892,9 @@
 <section id="ai">
   <div class="container">
     <div class="ai-inner">
-      <span class="section-label">AI &amp; Technology</span>
-      <h2>AI isn't a feature.<br>It's the foundation.</h2>
-      <p class="lead">
+      <span class="section-label" data-i18n="ai.label">AI &amp; Technology</span>
+      <h2 data-i18n="ai.title">AI isn't a feature.<br>It's the foundation.</h2>
+      <p class="lead" data-i18n="ai.lead">
         From co-founding one of Finland's first AI-native accounting products to
         scaling it inside a Nordic tech giant, I've spent years at the frontier of
         practical AI adoption — not just discussing it, but shipping it.
@@ -865,18 +902,18 @@
       <div class="ai-points">
         <div class="ai-point fade-up">
           <div class="ai-point-icon">⚡</div>
-          <h4>AI-native Product Building</h4>
-          <p>Designing products where AI is baked into the core workflow — not bolted on as an afterthought.</p>
+          <h4 data-i18n="ai.h1">AI-native Product Building</h4>
+          <p data-i18n="ai.p1">Designing products where AI is baked into the core workflow — not bolted on as an afterthought.</p>
         </div>
         <div class="ai-point fade-up delay-1">
           <div class="ai-point-icon">📈</div>
-          <h4>From Startup to Scale</h4>
-          <p>Translating early AI innovation into repeatable, scalable product lines with enterprise-grade reliability.</p>
+          <h4 data-i18n="ai.h2">From Startup to Scale</h4>
+          <p data-i18n="ai.p2">Translating early AI innovation into repeatable, scalable product lines with enterprise-grade reliability.</p>
         </div>
         <div class="ai-point fade-up delay-2">
           <div class="ai-point-icon">🤝</div>
-          <h4>Partnerships &amp; Ecosystem</h4>
-          <p>Building AI-powered partnerships — connecting products, platforms, and people to accelerate growth.</p>
+          <h4 data-i18n="ai.h3">Partnerships &amp; Ecosystem</h4>
+          <p data-i18n="ai.p3">Building AI-powered partnerships — connecting products, platforms, and people to accelerate growth.</p>
         </div>
       </div>
     </div>
@@ -888,48 +925,48 @@
 <!-- ── Featured In ──────────────────────────────── -->
 <section id="featured">
   <div class="container">
-    <span class="section-label">Featured In</span>
-    <h2>In the media.</h2>
+    <span class="section-label" data-i18n="featured.label">Featured In</span>
+    <h2 data-i18n="featured.title">In the media.</h2>
     <div class="featured-grid">
 
       <a href="https://www.visma.com/insights/content/from-feature-to-revenue-cracking-the-ai-monetisation-code-with-fabricai" target="_blank" rel="noopener noreferrer" class="featured-card fade-up">
-        <div class="featured-type">📄 Article · In English</div>
+        <div class="featured-type" data-i18n="f1.type">📄 Article · In English</div>
         <div class="featured-icon" style="background:#E0F2FE;">📄</div>
         <div class="featured-title">From feature to revenue: Cracking the AI monetisation code with FabricAI</div>
-        <div class="featured-meta">Visma Insights · Jun 2026. How FabricAI built an autonomous AI engine with outcome-based pricing — automating 50% of invoices today, targeting 95% by 2030. "When we move from early market to mainstream market, we need to hide the AI."</div>
-        <span class="featured-cta">Read on Visma.com →</span>
+        <div class="featured-meta" data-i18n="f1.meta">Visma Insights · Jun 2026. How FabricAI built an autonomous AI engine with outcome-based pricing — automating 50% of invoices today, targeting 95% by 2030. "When we move from early market to mainstream market, we need to hide the AI."</div>
+        <span class="featured-cta" data-i18n="f1.cta">Read on Visma.com →</span>
       </a>
 
       <a href="https://www.visma.fi/sisallot/podcast-startup-vuoristorata" target="_blank" rel="noopener noreferrer" class="featured-card fade-up delay-1">
-        <div class="featured-type">🎙 Podcast · In Finnish</div>
+        <div class="featured-type" data-i18n="f2.type">🎙 Podcast · In Finnish</div>
         <div class="featured-icon icon-podcast">🎙</div>
         <div class="featured-title">afterIT — Startup-vuoristorata: FabricAI:n tarina nuoresta kasvuyrityksestä exitiin Vismalle</div>
-        <div class="featured-meta">Visma afterIT, ep. 19 · Jan 2025. The full story of FabricAI — from four founders at a Tampere accelerator to a multi-million acquisition by Visma in five years.</div>
-        <span class="featured-cta">Listen on Visma.fi →</span>
+        <div class="featured-meta" data-i18n="f2.meta">Visma afterIT, ep. 19 · Jan 2025. The full story of FabricAI — from four founders at a Tampere accelerator to a multi-million acquisition by Visma in five years.</div>
+        <span class="featured-cta" data-i18n="f2.cta">Listen on Visma.fi →</span>
       </a>
 
       <a href="https://open.spotify.com/episode/5UvWmEldCIDbW5FXNVqxVi" target="_blank" rel="noopener noreferrer" class="featured-card fade-up delay-1">
-        <div class="featured-type">🎧 Spotify · In Finnish</div>
+        <div class="featured-type" data-i18n="f3.type">🎧 Spotify · In Finnish</div>
         <div class="featured-icon icon-spotify">🎧</div>
         <div class="featured-title">afterIT — Startup-vuoristorata</div>
-        <div class="featured-meta">The same episode available on Spotify. Covers bootstrapping, Slush, the emotional rollercoaster of startup life, and what happens after the exit.</div>
-        <span class="featured-cta">Listen on Spotify →</span>
+        <div class="featured-meta" data-i18n="f3.meta">The same episode available on Spotify. Covers bootstrapping, Slush, the emotional rollercoaster of startup life, and what happens after the exit.</div>
+        <span class="featured-cta" data-i18n="f3.cta">Listen on Spotify →</span>
       </a>
 
       <a href="https://se-tuntuu-sydamessa-tarinoita-uuden-ajan-yrittajyydesta.webnode.fi/tietoa-meista/" target="_blank" rel="noopener noreferrer" class="featured-card fade-up delay-2">
-        <div class="featured-type">📖 Book · In Finnish</div>
+        <div class="featured-type" data-i18n="f4.type">📖 Book · In Finnish</div>
         <div class="featured-icon icon-book">📖</div>
         <div class="featured-title">Se tuntuu sydämessä — tarinoita uuden ajan yrittäjyydestä</div>
-        <div class="featured-meta">A book of stories from 24 young entrepreneurs from TAMK's Proakatemia program. Tuukka and Kaarle Putti share their story of founding FabricAI.</div>
-        <span class="featured-cta">Read more →</span>
+        <div class="featured-meta" data-i18n="f4.meta">A book of stories from 24 young entrepreneurs from TAMK's Proakatemia program. Tuukka and Kaarle Putti share their story of founding FabricAI.</div>
+        <span class="featured-cta" data-i18n="f4.cta">Read more →</span>
       </a>
 
       <a href="https://www.tamperelainen.fi/paikalliset/1222727" target="_blank" rel="noopener noreferrer" class="featured-card fade-up delay-3">
-        <div class="featured-type">📰 Article · In Finnish</div>
+        <div class="featured-type" data-i18n="f5.type">📰 Article · In Finnish</div>
         <div class="featured-icon" style="background:#FEF3C7;">📰</div>
         <div class="featured-title">Terminator inspiroi tekoälyfirmaa — "Jos on tavoite ja visio, sille pitää antaa kaikkensa"</div>
-        <div class="featured-meta">Tamperelainen · Oct 2019. FabricAI's founding story covered by local media — how Schwarzenegger's mindset shaped the team's approach to building an AI company from scratch.</div>
-        <span class="featured-cta">Read on Tamperelainen →</span>
+        <div class="featured-meta" data-i18n="f5.meta">Tamperelainen · Oct 2019. FabricAI's founding story covered by local media — how Schwarzenegger's mindset shaped the team's approach to building an AI company from scratch.</div>
+        <span class="featured-cta" data-i18n="f5.cta">Read on Tamperelainen →</span>
       </a>
 
     </div>
@@ -942,9 +979,9 @@
 <section id="contact">
   <div class="container">
     <div class="contact-inner">
-      <span class="section-label">Contact</span>
-      <h2>Let's talk.</h2>
-      <p class="lead">
+      <span class="section-label" data-i18n="contact.label">Contact</span>
+      <h2 data-i18n="contact.title">Let's talk.</h2>
+      <p class="lead" data-i18n="contact.lead">
         Whether you're building something bold, looking for a partner, or just want
         to connect — I'm always open to a good conversation.
       </p>
@@ -952,7 +989,7 @@
         <a href="mailto:tuukka@seeslahti.com" class="contact-link">
           <div class="contact-icon">✉</div>
           <div class="contact-text">
-            <strong>Email</strong>
+            <strong data-i18n="contact.email">Email</strong>
             <span>tuukka@seeslahti.com</span>
           </div>
           <span class="contact-arrow">→</span>
@@ -996,6 +1033,131 @@
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  // ─── i18n ───
+  // English is the default content in the HTML (indexed by search engines);
+  // Finnish strings live here and are swapped in by data-i18n key.
+  const FI = {
+    'nav.about':    'Tietoa',
+    'nav.work':     'Työ',
+    'nav.ai':       'Tekoäly',
+    'nav.featured': 'Mediassa',
+    'nav.contact':  'Yhteystiedot',
+
+    'hero.eyebrow': 'Product Director · Perustaja · Sijoittaja',
+    'hero.tagline': 'Rakennan tekoälyyn pohjautuvia tuotteita nollasta menestykseen. Yksi FabricAI:n perustajista — Visma osti yhtiön vuonna 2023. Johtanut tuotelinjan kasvua miljoonan euron ARR:stä viiteen miljoonaan. Sijoittaja ja neuvonantaja Calmbay Capitalin kautta.',
+    'hero.cta1':    'Katso mitä teen ↓',
+    'hero.cta2':    'Ota yhteyttä',
+
+    'about.label':  'Tietoa',
+    'about.title':  'Nollasta exitiin —<br>ja yhä rakentamassa.',
+    'about.p1':     'Olen tamperelainen tuotejohtaja, yrittäjä ja tekoälyn puolestapuhuja. Perustin FabricAI:n vuonna 2018 yhdessä Jarkko Tolvasen, Juhani Tolvasen ja Kaarle Putin kanssa. Meitä yhdisti turhautuminen siihen, kuinka paljon käsityötä ja aikaa ostolaskujen käsittely vei.',
+    'about.p2':     'Kasvatimme FabricAI:n valkotaulun luonnoksesta tuotteeksi, jota käyttää yli 40 000 yritystä ja joka käsittelee yli miljoona laskua kuukaudessa. Tavoite oli kirkas alusta asti: kirjoitimme valkotaululle kirjaimellisesti "Exit Vismalle". Vuonna 2023 se toteutui.',
+    'about.p3':     'Nykyään johdan FabricAI:n tuotelinjaa Vismalla Product Directorina ja vastaan liiketoimintamme kasvusta. Tämän ohella sijoitan alkuvaiheen yrityksiin ja tuen perustajia holdingyhtiöni Calmbay Capital Oy:n kautta.',
+    'stat.founded':   'FabricAI perustettiin',
+    'stat.companies': 'Yritystä käyttää FabricAI:ta',
+    'stat.invoices':  'Laskua kuukaudessa',
+    'stat.acquired':  'Visma osti yhtiön',
+
+    'work.label':   'Tällä hetkellä',
+    'work.title':   'Mihin aikani<br>kuluu.',
+    'work.badge1':  'Päätoimi · Kokoaikainen',
+    'work.desc1':   'Johdan FabricAI:n tuotelinjaa Vismalla: vastaan tuotestrategiasta, tiimin kasvattamisesta ja kansainvälisistä kumppanuuksista.',
+    'tag.strategy': 'Tuotestrategia',
+    'tag.aiauto':   'Tekoälyautomaatio',
+    'tag.acctech':  'Taloushallinto',
+    'work.badge2':  'Holding &amp; sijoitukset',
+    'work.role2':   'Perustaja · Hallituksen puheenjohtaja',
+    'work.desc2':   'Oma holding- ja sijoitusyhtiöni, jonka kautta tuen alkuvaiheen startupeja ja rakennan pitkäjänteisesti varallisuutta. Tarjoan perustajille pääomaa, verkostoja ja käytännön kokemusta startup-arjesta.',
+    'tag.early':    'Alkuvaihe',
+    'tag.advisory': 'Sparraus',
+
+    'ai.label': 'Tekoäly &amp; teknologia',
+    'ai.title': 'Tekoäly ei ole vain ominaisuus.<br>Se on perusta.',
+    'ai.lead':  'Olen ollut perustamassa yhtä Suomen ensimmäisistä tekoälypohjaisista taloushallinnon tuotteista ja skaalaamassa sitä pohjoismaisen ohjelmistojätin sisällä. Käytännön tekoälyä olen tehnyt vuosia — en vain puhunut siitä, vaan vienyt sen tuotantoon.',
+    'ai.h1':    'Tekoäly tuotteen ytimessä',
+    'ai.p1':    'Suunnittelen tuotteita, joissa tekoäly on osa ydinprosessia — ei päälle liimattu lisäosa.',
+    'ai.h2':    'Startupista kasvuyhtiöksi',
+    'ai.p2':    'Jalostan varhaiset tekoälyinnovaatiot toistettaviksi ja skaalautuviksi tuotelinjoiksi, jotka täyttävät yritysasiakkaiden vaatimukset.',
+    'ai.h3':    'Kumppanuudet &amp; ekosysteemi',
+    'ai.p3':    'Rakennan tekoälyyn nojaavia kumppanuuksia ja yhdistän tuotteita, alustoja ja ihmisiä kasvun vauhdittamiseksi.',
+
+    'featured.label': 'Julkisuudessa',
+    'featured.title': 'Mediassa.',
+    'f1.type': '📄 Artikkeli · englanniksi',
+    'f1.meta': 'Visma Insights · kesäkuu 2026. Miten FabricAI rakensi autonomisen tekoälymoottorin ja hinnoitteli sen tulosten mukaan — tänään automaatioaste on 50 %, tavoite 95 % vuoteen 2030 mennessä. "Kun siirrymme varhaisilta markkinoilta valtavirtaan, tekoäly pitää piilottaa."',
+    'f1.cta':  'Lue artikkeli →',
+    'f2.type': '🎙 Podcast · suomeksi',
+    'f2.meta': 'Visma afterIT, jakso 19 · tammikuu 2025. FabricAI:n koko tarina: neljä perustajaa tamperelaisessa kiihdyttämössä, ja viisi vuotta myöhemmin monen miljoonan euron yrityskauppa Vismalle.',
+    'f2.cta':  'Kuuntele jakso →',
+    'f3.type': '🎧 Spotify · suomeksi',
+    'f3.meta': 'Sama jakso Spotifyssa. Puhetta omarahoitteisesta kasvusta, Slushista, startup-elämän tunnevuoristoradasta ja siitä, mitä exitin jälkeen tapahtuu.',
+    'f3.cta':  'Kuuntele Spotifyssa →',
+    'f4.type': '📖 Kirja · suomeksi',
+    'f4.meta': 'Kirja, jossa 24 nuorta yrittäjää TAMKin Proakatemiasta kertoo tarinansa. Tuukka ja Kaarle Putti kertovat, miten FabricAI sai alkunsa.',
+    'f4.cta':  'Lue lisää →',
+    'f5.type': '📰 Artikkeli · suomeksi',
+    'f5.meta': 'Tamperelainen · lokakuu 2019. FabricAI:n perustamistarina paikallislehdessä: miten Schwarzeneggerin asenne muovasi tiimin tapaa rakentaa tekoälyyritys tyhjästä.',
+    'f5.cta':  'Lue juttu →',
+
+    'contact.label': 'Yhteystiedot',
+    'contact.title': 'Jutellaan.',
+    'contact.lead':  'Rakennatpa jotain rohkeaa, etsit kumppania tai haluat vain vaihtaa ajatuksia — hyvälle keskustelulle löytyy aina aikaa.',
+    'contact.email': 'Sähköposti',
+  };
+
+  const META = {
+    en: {
+      title: 'Tuukka Seeslahti — Product Director, Co-founder & Investor',
+      description: document.querySelector('meta[name="description"]').content,
+      menu: 'Toggle menu',
+    },
+    fi: {
+      title: 'Tuukka Seeslahti — Product Director, perustaja & sijoittaja',
+      description: 'Tuukka Seeslahti on tamperelainen tuotejohtaja, yrittäjä ja tekoälyn edelläkävijä. Yksi FabricAI:n perustajista (Visma osti yhtiön 2023). Product Director, joka kasvattaa FabricAI:ta miljoonan euron ARR:stä viiteen miljoonaan. Sijoittaja Calmbay Capital Oy:n kautta.',
+      menu: 'Avaa valikko',
+    },
+  };
+
+  const i18nEls = document.querySelectorAll('[data-i18n]');
+  const EN = {};
+  i18nEls.forEach(el => { EN[el.dataset.i18n] = el.innerHTML; });
+
+  function setLang(lang, { updateUrl = true } = {}) {
+    const dict = lang === 'fi' ? FI : EN;
+    i18nEls.forEach(el => {
+      const v = dict[el.dataset.i18n];
+      if (v != null) el.innerHTML = v;
+    });
+    document.documentElement.lang = lang;
+    document.title = META[lang].title;
+    document.querySelector('meta[name="description"]').content = META[lang].description;
+    navToggle.setAttribute('aria-label', META[lang].menu);
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      const on = b.dataset.lang === lang;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on);
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+    if (updateUrl) {
+      const url = new URL(location.href);
+      if (lang === 'fi') url.searchParams.set('lang', 'fi'); else url.searchParams.delete('lang');
+      history.replaceState(null, '', url);
+    }
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(b =>
+    b.addEventListener('click', () => setLang(b.dataset.lang))
+  );
+
+  (function initLang() {
+    const fromUrl = new URLSearchParams(location.search).get('lang');
+    let saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    const browser = (navigator.language || '').toLowerCase().startsWith('fi') ? 'fi' : 'en';
+    const lang = ['en', 'fi'].includes(fromUrl) ? fromUrl : (saved || browser);
+    setLang(lang, { updateUrl: !!fromUrl });
+  })();
 </script>
 </body>
 </html>
